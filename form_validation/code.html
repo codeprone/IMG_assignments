@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <style>
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 4%;
+        width: 20vw;
+        height: 70vh;
+        box-shadow: 0 0 30px;
+        margin-left: 30%;
+    }
+    
+    </style>
+</head>
+<body>
+    <form action="" class="myform">
+        Year:
+        <select >
+            <option name="first" id="">First Year</option>
+            <option name="second" id="">Second Year</option>
+            <option name="third" id="">Third Year</option>
+            <option name="fourth" id=""> Fourth Year</option>
+        </select>
+        Mobile Number:<input type="number" value="" placeholder="Mobile Number">
+        Age:<input type="number" value="" placeholder="Age">
+        <span class="gender">
+            <input type="radio" name="gender">
+            Male<input type="radio" name="gender">
+            Female<input type="radio" name="gender">
+            Others
+        </span>
+        Email:<input type="text" class="email" placeholder="Email Address">
+        Password:<input type="password" class="password" placeholder="Password">
+        Re-enter Password:<input type="password" class="repassword" placeholder="Re-Type Password">
+        Name:<input type="text" class="name" placeholder="Your Name">
+        City:<input type="text" class="city" placeholder="Your City">
+    </form>
+</body>
+</html>
