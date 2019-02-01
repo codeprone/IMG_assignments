@@ -20,27 +20,64 @@
     </style>
 </head>
 <body>
-    <form action="" class="myform">
+    <form action="#" class="myform" name="myform">
         Year:
         <select >
-            <option name="first" id="">First Year</option>
-            <option name="second" id="">Second Year</option>
-            <option name="third" id="">Third Year</option>
-            <option name="fourth" id=""> Fourth Year</option>
+            <option name="first" id="" value="1">First Year</option>
+            <option name="second" id="" value="2">Second Year</option>
+            <option name="third" id="" value="3">Third Year</option>
+            <option name="fourth" id="" value="4"> Fourth Year</option>
         </select>
-        Mobile Number:<input type="number" value="" placeholder="Mobile Number">
-        Age:<input type="number" value="" placeholder="Age">
+        Mobile Number:<input type="text" value="" placeholder="Mobile Number" class="mobile">
+        Age:<input type="text" class="age" placeholder="Age">
         <span class="gender">
             <input type="radio" name="gender">
             Male<input type="radio" name="gender">
             Female<input type="radio" name="gender">
             Others
         </span>
-        Email:<input type="text" class="email" placeholder="Email Address">
+        Email:<input type="text" class="email" placeholder="Email Address" name="email">
         Password:<input type="password" class="password" placeholder="Password">
         Re-enter Password:<input type="password" class="repassword" placeholder="Re-Type Password">
         Name:<input type="text" class="name" placeholder="Your Name">
         City:<input type="text" class="city" placeholder="Your City">
+        <input type="submit" class="submit">
     </form>
 </body>
+<script>
+    var count = 0;
+    var submit = document.querySelector(".submit");
+    submit.addEventListener("click",function(e){
+        var mobile=document.querySelector(".mobile");
+        if(mobile.value.match(/^\d{10}$/)==null)
+            mobile.style.border="1px solid red";
+        var age=document.querySelector(".age");
+        if(age.value.match(/^\d{2,3}$/)==null)
+            age.style.border="1px solid red";
+        var email=document.querySelector(".email");
+        if(email.value.match(/^\D{4,}\@\D{2}\.iitr\.ac\.in$/)==null)
+            email.style.border="1px solid red";
+        var pass=document.querySelector(".password");
+        password=pass.value;
+        if(password.match(/[a-z]/)==null || password.match(/[A-Z]/)==null || password.match(/[0-9]/)==null)
+            {
+                pass.style.border="1px solid red";
+                //console.log(password.match(/^[a-z]$/),password.match(/^[A-Z]$/),password.match(/^[0-9]$/))
+            }
+        var repass=document.querySelector(".repassword");
+        if(password!=repass.value)
+            repass.style.border="1px solid red";
+        var city=document.querySelector(".city");
+        if(city.value.match(/^[a-z A-Z]{}$/)==null)
+            city.style.border="1px solid red";
+        
+        if(count==8)
+            approve=true;
+    
+    })
+
+
+
+
+</script>
 </html>
